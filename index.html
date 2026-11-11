@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <!-- head: Carrega as configurações de metadados, links de estilo e títulos que não aparecem diretamente na tela -->
+    <meta charset="UTF-8">
+    <!-- meta charset: Define a codificação de caracteres padrão para evitar erros em acentos e cedilhas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta viewport: Configuração essencial para deixar o layout responsivo em celulares e tablets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- link rel: Conecta a folha de estilo CSS externa para estilizar as tags deste HTML -->
+    <title>Nexus Geek | Ordem Paranormal</title>
+    <!-- title: Define o nome textual que será exibido na aba do navegador -->
+</head>
+
+<body> <!-- body: Delimita o corpo do documento, contendo todos os elementos visíveis para o usuário final -->
+
+    <!-- 1. Identidade Visual no Cabeçalho -->
+    <header class="main-header">
+        <!-- header: Tag semântica para o topo do site, agrupando logos e blocos de menus principais -->
+        <div class="header-container">
+            <!-- div: Container genérico utilizado aqui para centralizar e alinhar o conteúdo interno via CSS -->
+            <a href="index.html" class="logo">
+                <!-- a: Cria hiperlinks para navegação. Aqui aponta de volta para a Home -->
+                <img src="/maxresdefault.jpg"
+                    alt="Logotipo escrito Nexus Ordem com estética militar e ranhuras em vermelho" width="180"
+                    height="50">
+                <!-- img: Renderiza imagens. alt descreve o conteúdo visual para leitores de tela (acessibilidade) -->
+            </a>
+            <nav class="nav-menu">
+                <!-- nav: Tag semântica para indicar blocos ou conjuntos de links de navegação principal -->
+                <ul> <!-- ul: Cria uma lista desordenada (geralmente exibida com marcadores ou pontos de tópicos) -->
+                    <li><a href="#categorias">Elementos</a></li>
+                    <!-- li: Item individual pertencente a uma lista estruturada -->
+                    <li><a href="#Vitrine">Arsenal</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Vestuários</a></li>
+                    <li><a href="/cadastro.html" class="btn-nav-register">Alistar-se</a></li>
+
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <!-- O href deve apontar exatamente para carrinho.html -->
+                <a href="/carrinho.html" aria-label="Inventário de Equipamentos do Agente">
+                    🎒 <span class="cart-count">3</span>
+                </a>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main> <!-- main: Tag semântica de extrema importância, indica o conteúdo central e exclusivo da página atual -->
+
+        <!-- 2. Banner Principal com Carrossel que muda no Hover -->
+        <section class="hero-carousel">
+            <!-- section: Agrupa blocos de conteúdo relacionados a um mesmo assunto na página -->
+
+            <!-- Os controladores vêm ANTES para podermos usar o seletor '+' no CSS -->
+            <div class="carousel-controllers">
+                <span class="btn-nav btn-1"></span>
+                <span class="btn-nav btn-2"></span>
+                <span class="btn-nav btn-3"></span>
+            </div>
+
+            <!-- O container com os três banners -->
+            <div class="slides-container">
+                <div class="slide slide-1">
+                    <img src="/img/images(11).jpg" alt="Banner do elemento sangue" width="1200" height="400">
+                </div>
+                <div class="slide slide-2">
+                    <img src="/img/images(12).jpg" alt="Banner do elemento conhecimento" width="1200" height="400">
+                </div>
+                <div class="slide slide-3">
+                    <img src="/img/images(13).jpg" alt="Banner do elemento morte" width="1200" height="400">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 3. Navegação por Categorias com Explicação no Hover -->
+        <section id="categorias" class="categories-section">
+            <h2>Filtrar por Elemento</h2>
+            <!-- h2: Título secundário na hierarquia da página, indicando o tema da seção atual -->
+            <div class="categories-grid">
+
+                <!-- Elemento Sangue -->
+                <div class="category-item">
+                    <div class="image-wrapper">
+                        <img src="/images(3).jpg" alt="Símbolo oficial do Elemento Sangue em linhas vermelhas viscerais"
+                            width="150" height="150">
+                        <!-- Texto que vai aparecer no hover -->
+                        <div class="desc-elemento bg-sangue">
+                            <h1>Sangue</h1>
+                            <!-- h1: Título principal em nível hierárquico mais alto, usado aqui para os cards de categorias -->
+                            <p>Sentimento, paixão, dor e força física visceral.</p>
+                            <!-- p: Tag padrão para estruturar blocos de texto e parágrafos comuns -->
+                        </div>
+                    </div>
+                    <span>Sangue</span>
+                </div>
+
+                <!-- Elemento Morte -->
+                <div class="category-item">
+                    <div class="image-wrapper">
+                        <img src="/images(1).jpg"
+                            alt="Símbolo oficial do Elemento Morte em espirais pretas e cinzas de lodo" width="150"
+                            height="150">
+                        <div class="desc-elemento bg-morte">
+                            <h1>Morte</h1>
+                            <p>Tempo, distorção, lodo e controle da percepção temporal.</p>
+                        </div>
+                    </div>
+                    <span>Morte</span>
+                </div>
+
+                <!-- Elemento Conhecimento -->
+                <div class="category-item">
+                    <div class="image-wrapper">
+                        <img src="/images(2).jpg"
+                            alt="Símbolo oficial do Elemento Conhecimento desenhado em linhas douradas geométricas"
+                            width="150" height="150">
+                        <div class="desc-elemento bg-conhecimento">
+                            <h1>Conhecimento</h1>
+                            <p>Razão, lógica, rituais e a verdade oculta.</p>
+                        </div>
+                    </div>
+                    <span>Conhecimento</span>
+                </div>
+
+                <!-- Elemento Energia -->
+                <div class="category-item">
+                    <div class="image-wrapper">
+                        <img src="/images(4).jpg"
+                            alt="Símbolo oficial do Elemento Energia em raios roxos e magenta caóticos" width="150"
+                            height="150">
+                        <div class="desc-elemento bg-energia">
+                            <h1>Energia</h1>
+                            <p>Caos, mudança constante, eletricidade e sorte volátil.</p>
+                        </div>
+                    </div>
+                    <span>Energia</span>
+                </div>
+
+                <!-- Elemento Medo -->
+                <div class="category-item">
+                    <div class="image-wrapper">
+                        <img src="/images(12.1).jpg" alt="Símbolo oficial do Elemento Medo" width="150" height="150">
+                        <div class="desc-elemento bg-energia">
+                            <h1>Medo</h1>
+                            <p>Combustível de todo paranormal..</p>
+                        </div>
+                    </div>
+                    <span>Medo</span>
+                </div>
+
+            </div>
+        </section>
+        <!-- Seção da Vitrine de Produtos da Loja -->
+        <section id="Vitrine" class="products-section">
+            <h2>Equipamentos de Campo Autorizados</h2>
+            <div class="products-grid">
+
+                <!-- Card de Produto: Livro de Regras -->
+                <article class="product-card">
+                    <!-- article: Tag semântica para conteúdos independentes e replicáveis, ideal para representar produtos em lojas virtuais -->
+                    <figure class="product-image-container">
+                        <!-- figure: Container semântico para isolar imagens que possuem relação direta com o texto descritivo -->
+                        <img src="/images(5).jpg"
+                            alt="Livro de regras oficial de Ordem Paranormal RPG versão física de luxo com capa dura texturizada"
+                            width="300" height="300" loading="lazy">
+                        <!-- loading="lazy": Carregamento tardio da imagem, poupando dados e melhorando a velocidade da página -->
+                        <figcaption class="product-info">
+                            <!-- figcaption: Legenda ou bloco descritivo atrelado obrigatoriamente à tag figure acima -->
+                            <h3>Livro de Regras Oficial - Capa Dura</h3>
+                            <!-- h3: Título hierárquico intermediário, ótimo para dar nome aos produtos individuais -->
+                            <p class="price">R$ 189,90</p>
+                            <button type="button" class="btn-buy">Requisitar</button>
+                            <!-- button: Elemento nativo para ações interativas de clique do usuário -->
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <!-- Card de Produto: Set de Dados (Conectado à página de detalhes) -->
+                <article class="product-card">
+                    <figure class="product-image-container">
+                        <img src="/images(6).jpg"
+                            alt="Set de dados poliédricos para RPG customizados com o símbolo da Morte gravado nas faces"
+                            width="300" height="300" loading="lazy">
+                              <figcaption class="product-info">
+                        <h3>Set de Dados Ocultistas: Morte</h3>
+                        <p class="price">R$ 59,90</p>
+                        <!-- ESSA LINHA ABAIXO É A MAIS IMPORTANTE: Ela troca o <button> por um link real para abrir a página -->
+                        <a href="produto.html" class="btn-buy"
+                            style="display: block; text-align: center; text-decoration: none; line-height: 40px;">Requisitar</a>
+                    </figcaption>
+                    </figure>
+                  
+                </article>
+
+                <article class="product-card">
+                    <figure class="product-image-container">
+                        <img src="/images(7).jpg"
+                            alt="Casaco moletom preto pesado com capuz exibindo o brasão dourado dos investigadores da Ordem"
+                            width="300" height="300" loading="lazy">
+                             <figcaption class="product-info">
+                        <h3>Set de Dados Ocultistas: Morte</h3>
+                        <p class="price">R$ 59,90</p>
+                        <a href="/produto.html" class="btn-buy"
+                            style="display: block; text-align: center; text-decoration: none;">Requisitar</a>
+                    </figcaption>
+                    </figure>
+                   
+
+                </article>
+                <article class="product-card">
+                    <figure class="product-image-container">
+                        <img src="/images(8).jpg"
+                            alt="Amuletos de metal envelhecido com símbolos rúnicos gravados do elemento Conhecimento"
+                            width="300" height="300" loading="lazy">
+                        <figcaption class="product-info">
+                            <h3>Amuleto do Elemento Conhecimento</h3>
+                            <p class="price">R$ 79,90</p>
+                            <button class="btn-buy">Requisitar</button>
+                        </figcaption>
+                    </figure>
+
+                </article>
+                <!-- Produto 5 -->
+                <article class="product-card">
+                    <figure class="product-image-container">
+                        <img src="/images(9).jpg"
+                            alt="Divisória física rígida para o mestre de RPG com artes sombrias das criaturas do Outro Lado"
+                            width="300" height="300" loading="lazy">
+                        <figcaption class="product-info">
+                            <h3>Escudo do Mestre: Sobrevivência</h3>
+                            <p class="price">R$ 89,90</p>
+                            <button class="btn-buy">Requisitar</button>
+                        </figcaption>
+                    </figure>
+
+                </article>
+
+                <!-- Produto 6: 5. Produto "Esgotado" -->
+                <article class="product-card sold-out">
+                    <figure class="product-image-container">
+                        <span class="badge-sold-out">ESGOTADO</span>
+                        <img src="/images(10).jpg"
+                            alt="Réplica decorativa em tamanho real da Relíquia do Sangue imitando um coração de metal e veias pulsantes"
+                            width="300" height="300" loading="lazy">
+                        <figcaption class="product-info">
+                            <h3>Relíquia do Sangue (Réplica Escala 1:1)</h3>
+                            <p class="price">R$ 499,90</p>
+                            <button class="btn-buy" disabled>Indisponível</button>
+                        </figcaption>
+                    </figure>
+
+                </article>
+
+
+
+            </div>
+        </section>
+        <!-- Seção Sobre a Ordem e o Criador -->
+        <section id="sobre-ordem" class="about-section">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>O Outro Lado e o Criador</h2>
+                    <p>
+                        <strong>Ordem Paranormal</strong> é um universo de RPG de mesa focado em investigação e mistério
+                        paranormal, onde agentes de uma organização secreta arriscam suas vidas para manter o equilíbrio
+                        mundial contra criaturas terríveis vindas do Outro Lado.
+                    </p>
+                    <p>
+                        Todo esse ecossistema de histórias, livros, jogos eletrônicos e colecionáveis nasceu e se
+                        expandiu por meio das transmissões ao vivo no canal do <strong>Cellbit</strong> na Twitch. O
+                        projeto revolucionou o cenário de RPG brasileiro, unindo uma comunidade gigantesca em torno de
+                        mistérios complexos e narrativas cinematográficas marcantes.
+                    </p>
+                    <div class="about-links">
+                        <a href="https://twitch.tv" target="_blank" class="btn-link">Assistir na Twitch</a>
+                        <a href="https://youtube.com" target="_blank" class="btn-link secondary">Canal do YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Botão Flutuante de Atendimento/Suporte da Ordem -->
+            <div class="suporte-ordem-flutuante">
+                <!-- O Balão de texto -->
+                <a href="#" class="balao-fale-conosco">
+                    <span class="linha-1">Fale com a</span>
+                    <span class="linha-2">Central NEXUS</span>
+                </a>
+                <!-- A imagem do seu personagem (ex: o Veríssimo, um agente ou avatar) -->
+                <div class="personagem-suporte">
+                    <img src="/images(11.1).jpg"
+                        alt="Avatar ilustrado de um agente de investigação da Ordem Paranormal com óculos táticos"
+                        width="120" height="120">
+                </div>
+            </div>
+
+        </section> <!-- Seção de Explicação da Série e Temporadas -->
+        <section class="series-lore-section">
+            <div class="lore-container">
+                <div class="lore-text">
+                    <h2>O Fenômeno Ordem Paranormal</h2>
+                    <p>Criado por Rafael "Cellbit" Lange, <strong>Ordem Paranormal</strong> é um universo de RPG de mesa
+                        jogado ao vivo que se transformou em um dos maiores fenômenos da cultura geek brasileira. A
+                        história acompanha investigadores da <em>Ordo Realitas</em>, uma organização secreta que luta
+                        contra criaturas do Outro Lado criadas pelo Medo.</p>
+                </div>
+
+                <div class="seasons-timeline">
+                    <h3>Dossiê de Temporadas</h3>
+                    <ul class="seasons-list">
+                        <li>
+                            <span class="season-badge badge-classic">Iniciação</span>
+                            <div class="season-desc">
+                                <strong>A Ordem Paranormal (2020):</strong> A primeira missão onde tudo começou.
+                                Investigadores novatos enfrentam o mistério da Escola Nostradamus.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="season-badge badge-sangue">O Segredo na Floresta</span>
+                            <div class="season-desc">
+                                <strong>OSNF (2020):</strong> A equipe viaja até a isolada cidade de Carpazinha para
+                                desvendar um mistério visceral envolvendo o Santo Berço.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="season-badge badge-conhecimento">Desconjuração</span>
+                            <div class="season-desc">
+                                <strong>OPD (2020-2021):</strong> Uma temporada massiva focada em rituais ocultistas, na
+                                verdade oculta e nos mistérios do Labirinto de Kian.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="season-badge badge-energia">Calamidade</span>
+                            <div class="season-desc">
+                                <strong>OPC (2021):</strong> O confronto definitivo de alta escala entre as Relíquias da
+                                Morte, Sangue, Conhecimento e Energia.
+                            </div>
+                        </li>
+                        <li>
+                            <span class="season-badge badge-morte">Sinais do Outro Lado</span>
+                            <div class="season-desc">
+                                <strong>SDOL (2022):</strong> Uma nova equipe investiga mistérios tecnológicos e
+                                anomalias físicas na cidade de Tipora.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p>&copy; 2026 Nexus Ordem. Licenciado pela Ordem dos Investigadores do Veríssimo. O Equilíbrio deve ser
+            mantido.</p>
+    </footer>
+</body>
+
+</html>

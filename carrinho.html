@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Inventário de Carga | Nexus Geek</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="/maxresdefault.jpg" alt="Logotipo Nexus" width="180" height="50">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#categorias">Elementos</a></li>
+                    <li><a href="index.html#Vitrine">Arsenal</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Vestuários</a></li>
+                    <li><a href="#">Dados</a></li>
+                    <li><a href="cadastro.html" class="btn-nav-register">Alistar-se</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="carrinho.html" aria-label="Inventário" class="active">
+                    🎒 <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container cart-layout">
+        
+        <!-- Bloco da Tabela Semântica Obrigatória Completa -->
+        <section class="cart-table-container">
+            <table class="cart-table">
+                <caption>Lista de Materiais de Campo Pré-Aprovados</caption> <!-- caption: Descrição interna da tabela -->
+                
+                <thead> <!-- thead: Define o cabeçalho estrutural com os títulos das colunas -->
+                    <tr>
+                        <th scope="col">Equipamento</th> <!-- th scope="col": Título conceitual da coluna -->
+                        <th scope="col">Créditos Unitários</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                
+                <tbody> <!-- tbody: Agrupa as linhas dos produtos no carrinho -->
+                    <tr>
+                        <td>
+                            <div class="cart-product-cell">
+                                <img src="/images(6).jpg" alt="Set de Dados de Morte">
+                                <div>
+                                    <strong>Set de Dados Ocultistas: Morte</strong>
+                                    <span class="category">Elemento: Morte</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 59,90</td>
+                        <td><input type="number" min="1" value="1" aria-label="Alterar quantidade de Dados"></td>
+                        <td>R$ 59,90</td>
+                        <td><button type="button" class="btn-remove" title="Descartar do Inventário">❌</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-product-cell">
+                                <img src="/images(5).jpg" alt="Livro de Regras">
+                                <div>
+                                    <strong>Livro de Regras Oficial - Capa Dura</strong>
+                                    <span class="category">Manual Técnico</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 189,90</td>
+                        <td><input type="number" min="1" value="1" aria-label="Alterar quantidade de Livros"></td>
+                        <td>R$ 189,90</td>
+                        <td><button type="button" class="btn-remove" title="Descartar do Inventário">❌</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="cart-product-cell">
+                                <img src="/images(7).jpg" alt="Moletom Oficial">
+                                <div>
+                                    <strong>Moletom Oficial da Ordem</strong>
+                                    <span class="category">Vestuário Tático</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>R$ 249,90</td>
+                        <td><input type="number" min="1" value="1" aria-label="Alterar quantidade de Moletons"></td>
+                        <td>R$ 249,90</td>
+                        <td><button type="button" class="btn-remove" title="Descartar do Inventário">❌</button></td>
+                    </tr>
+                </tbody>
+                
+                <tfoot> <!-- tfoot: Rodapé estrutural da tabela -->
+                    <tr>
+                        <!-- colspan="5": Une as 5 colunas da tabela para exibir a mensagem unificada de frete grátis -->
+                        <td colspan="5" class="shipping-alert">🩸 Logística da Ordem: Sua equipe atingiu o NEX necessário para **Despacho Logístico Grátis**!</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Card Lateral de Resumo do Pedido -->
+        <aside class="order-summary"> <!-- aside: Tag semântica para conteúdos complementares e barras laterais -->
+            <h3>Logística de Missão</h3>
+            <div class="summary-row">
+                <span>Custo Parcial</span>
+                <span>R$ 499,70</span>
+            </div>
+            <div class="summary-row">
+                <span>Apoio de Envio (Frete)</span>
+                <span class="free-shipping">Grátis</span>
+            </div>
+            
+            <div class="coupon-section">
+                <label for="coupon-input">Código de Autorização (Cupom)</label>
+                <div class="coupon-group">
+                    <input type="text" id="coupon-input" placeholder="Ex: VERISSIMO">
+                    <button type="button">Validar</button>
+                </div>
+            </div>
+
+            <div class="summary-row total-row">
+                <span>Créditos Totais</span>
+                <span>R$ 499,70</span>
+            </div>
+
+            <!-- Botão de destaque obrigatório apontando para a tela final de cadastro/checkout -->
+            <a href="cadastro.html" class="btn-checkout">Finalizar Requisição →</a>
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Nexus Geek & Ordo Realitas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

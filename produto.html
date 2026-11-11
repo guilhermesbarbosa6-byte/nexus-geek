@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- meta: Define a codificação para evitar erros em acentos e cedilhas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport: Garante a responsividade em celulares -->
+    <link rel="stylesheet" href="/style.css"> <!-- link: Compartilha a folha de estilo unificada do projeto -->
+    <title>Ficha de Inspeção de Equipamento | Nexus Geek</title>
+</head>
+<body>
+    <!-- Cabeçalho idêntico para manter a integridade da identidade visual da loja -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="/maxresdefault.jpg" alt="Logotipo escrito Nexus Ordem com estética militar" width="180" height="50">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#categorias">Elementos</a></li>
+                    <li><a href="index.html#Vitrine">Arsenal</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Vestuários</a></li>
+                    <li><a href="#">Dados</a></li>
+                    <li><a href="cadastro.html" class="btn-nav-register">Alistar-se</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="carrinho.html" aria-label="Inventário de Equipamentos do Agente">
+                    🎒 <span class="cart-count">1</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Trilha de Navegação (Breadcrumb): Exigência de usabilidade para indicar a localização atual -->
+        <nav class="breadcrumb">
+            <a href="index.html">Início</a> &gt; <a href="index.html#Vitrine">Arsenal</a> &gt; <span>Set de Dados Ocultistas: Morte</span>
+        </nav>
+
+        <!-- Seção do Produto configurada em Duas Colunas via Grid/Flexbox no CSS -->
+        <section class="product-details">
+            
+            <!-- Coluna da Esquerda: Galeria de Imagens -->
+            <div class="product-gallery">
+                <!-- Foto Principal com proporção controlada via aspect-ratio no CSS -->
+                <img src="/images(6).jpg" alt="Set de dados poliédricos para RPG customizados com o símbolo da Morte gravado" class="main-image">
+                <!-- Miniaturas (Thumbnails) abaixo da foto principal -->
+                <div class="thumbnails">
+                    <img src="/images(6).jpg" alt="Miniatura do Set de Dados visão ampla" class="thumb active">
+                    <img src="/img/images(13).jpg" alt="Miniatura detalhe das faces" class="thumb">
+                    <img src="/images(1).jpg" alt="Miniatura textura de lodo" class="thumb">
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Informações Gerais e Seleção -->
+            <div class="product-info">
+                <h1>Set de Dados Ocultistas: Morte</h1>
+                <div class="rating">⭐⭐⭐⭐⭐ <span>(4.9 - 18 Relatórios de Missão)</span></div>
+                
+                <div class="price-container">
+                    <span class="old-price">R$ 79,90</span> <!-- Preço antigo riscado -->
+                    <span class="current-price">R$ 59,90</span> <!-- Preço atual em destaque -->
+                </div>
+
+                <form class="product-options">
+                    <!-- Seletor de opções utilizando a tag select -->
+                    <label for="variant-select">Aprimoramento Paranormal:</label>
+                    <select id="variant-select" name="variacao" required>
+                        <option value="">Selecione o bônus de campo...</option>
+                        <option value="padrao">Set Clássico (Resina opaca)</option>
+                        <option value="lodo">Infusão de Lodo (Brilha no Escuro)</option>
+                        <option value="NEX">Energizado por NEX (+ Sorte Volátil)</option>
+                    </select>
+
+                    <!-- Link funcional obrigatório apontando diretamente para o carrinho -->
+                    <a href="carrinho.html" class="btn-primary">Adicionar ao Inventário</a>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tabela Semântica de Especificações Técnicas -->
+        <section class="specs-section">
+            <h2>Ficha Técnico-Operacional</h2>
+            <table class="specs-table"> <!-- table: Inicia a estrutura da tabela -->
+                <tbody> <!-- tbody: Agrupa o corpo de dados da tabela -->
+                    <tr> <!-- tr: Linha da tabela -->
+                        <th scope="row">Classificação</th> <!-- th scope="row": Cabeçalho conceitual da linha (Semântica W3C) -->
+                        <td>Item Amaldiçoado Classe I</td> <!-- td: Célula contendo o dado correspondente -->
+                    </tr>
+                    <tr>
+                        <th scope="row">Peso em Inventário</th>
+                        <td>1 Espaço de Carga</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Elemento Afiliado</th>
+                        <td>Morte (Distorção Temporal)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Material Base</th>
+                        <td>Resina Acrílica com Poeira de Lodo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Efeito de Sistema</th>
+                        <td>+2 em testes de Ocultismo aplicados</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Nexus Geek & Ordo Realitas. Todos os direitos reservados. "O Medo nos une."</p>
+    </footer>
+</body>
+</html>

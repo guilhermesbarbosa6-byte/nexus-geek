@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Ficha de Alistamento de Agente | Nexus Geek</title>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="/maxresdefault.jpg" alt="Logotipo Nexus" width="180" height="50">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html#categorias">Elementos</a></li>
+                    <li><a href="index.html#Vitrine">Arsenal</a></li>
+                    <li><a href="#">Livros</a></li>
+                    <li><a href="#">Vestuários</a></li>
+                    <li><a href="#">Dados</a></li>
+                    <li><a href="cadastro.html" class="btn-nav-register">Alistar-se</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="carrinho.html" aria-label="Inventário">
+                    🎒 <span class="cart-count">3</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container form-container">
+        <h1>Homologação e Registro de Agente</h1>
+        
+        <!-- form: Abre a estrutura do formulário HTML5 -->
+        <form action="#" method="POST" class="checkout-form">
+            
+            <!-- Bloco 1 – Dados Pessoais -->
+            <fieldset> <!-- fieldset: Agrupa semanticamente subseções de campos com o mesmo assunto -->
+                <legend>Dados de Identificação Operacional (Ficha do Recruta)</legend> <!-- legend: Define o título visível na borda da caixa do fieldset -->
+                
+                <div class="form-group">
+                    <!-- Acessibilidade W3C: O atributo 'for' da label deve ser rigorosamente igual ao 'id' do input para vinculá-los -->
+                    <label for="nome">Nome Completo / Registro Civil *</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Ex: Thiago Fritz"> <!-- required: Torna o preenchimento obrigatório no navegador -->
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail Seguro da Ordem *</label>
+                    <input type="email" id="email" name="email" required placeholder="agente@ordorealitas.com"> <!-- type="email": Valida sintaxe de e-mail de forma nativa -->
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cpf">CPF *</label>
+                        <!-- pattern: Expressão regular (Regex) para forçar a validação estrutural do formato do CPF brasileiro -->
+                        <input type="text" id="cpf" name="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Frequência de Rádio (Telefone) *</label>
+                        <input type="tel" id="tel" name="tel" required placeholder="(11) 99999-9999"> <!-- type="tel": Campo semântico otimizado para números de telefone -->
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nascimento">Data de Nascimento *</label>
+                        <input type="date" id="nascimento" name="nascimento" required> <!-- type="date": Invoca o seletor de calendário nativo do sistema operacional -->
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Chave Criptografada (Senha) *</label>
+                        <input type="password" id="senha" name="senha" required minlength="6"> <!-- type="password": Mascara os caracteres digitados por segurança -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="avatar">Foto para Crachá da Organização (Opcional)</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*"> <!-- type="file" com accept: Permite upload restrito a formatos de imagem -->
+                </div>
+            </fieldset>
+
+            <!-- Bloco 2 – Endereço de Entrega -->
+            <fieldset>
+                <legend>Coordenadas para Entrega de Suprimentos</legend>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cep">CEP Base *</label>
+                        <input type="text" id="cep" name="cep" required placeholder="00000-000">
+                    </div>
+                    <div class="form-group-large">
+                        <label for="rua">Logradouro / Avenida *</label>
+                        <input type="text" id="rua" name="rua" required placeholder="Av. Doutor Arnaldo">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="numero">Número *</label>
+                        <input type="text" id="numero" name="numero" required placeholder="666">
+                    </div>
+                    <div class="form-group-large">
+                        <label for="complemento">Esconderijo / Bloco / Apartamento</label>
+                        <input type="text" id="complemento" name="complemento" placeholder="Subsolo - Sala de Arquivos">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bairro">Bairro *</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade *</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado da Federação *</label>
+                        <select id="estado" name="estado" required> <!-- select: Cria caixas de listagem de seleção obrigatória -->
+                            <option value="">Selecione...</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Bloco 3 – Forma de Pagamento -->
+            <fieldset>
+                <legend>Financiamento da Carga</legend>
+                <div class="payment-options">
+                    
+                    <!-- Opção 1: Pix -->
+                    <label class="payment-card">
+                        <!-- type="radio": Garante a exclusividade de seleção de uma única opção dentro do mesmo grupo de name -->
+                        <input type="radio" name="pagamento" value="pix" required>
+                        <span class="payment-box">
+                            <span class="icon">⚡</span>
+                            <strong>Pix Instantâneo</strong>
+                            <small>Despacho tático imediato</small>
+                        </span>
+                    </label>
+
+                    <!-- Opção 2: Cartão -->
+                    <label class="payment-card">
+                        <input type="radio" name="pagamento" value="cartao">
+                        <span class="payment-box">
+                            <span class="icon">💳</span>
+                            <strong>Cartão Corporativo</strong>
+                            <small>Em até 12x de créditos</small>
+                        </span>
+                    </label>
+
+                    <!-- Opção 3: Boleto -->
+                    <label class="payment-card">
+                        <input type="radio" name="pagamento" value="boleto">
+                        <span class="payment-box">
+                            <span class="icon">📄</span>
+                            <strong>Boleto Autenticado</strong>
+                            <small>1 a 2 dias de processamento</small>
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Termos de Segurança Obrigatórios (Requisito de validação de checkbox) -->
+            <div class="terms-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Juro manter sigilo absoluto sobre a Ordem e aceito as diretrizes de campo. *</label>
+            </div>
+
+            <!-- Botão de envio obrigatório do tipo submit -->
+            <button type="submit" class="btn-submit">Finalizar Alistamento e Requisitar Arsenal</button>
+        </form>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Nexus Geek & Ordo Realitas. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

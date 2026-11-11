@@ -1,0 +1,733 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070708;
+    color: #d1d1d6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #ff0033;
+    margin: 40px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px rgba(255, 0, 51, 0.5);
+}
+
+/* ==========================================================================
+   1. IDENTIDADE VISUAL NO CABEÇALHO 
+   ========================================================================== */
+.main-header {
+    background-color: #0f1012;
+    border-bottom: 2px solid #ff0033;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffb703;
+    text-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+}
+
+.cart-icon a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    background-color: #ff0033;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+/* ==========================================================================
+   2. CARROSSEL QUE MUDA NO HOVER 
+   ========================================================================== */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #070708;
+}
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1200 / 400; 
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.slide.slide-1 {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controllers {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.btn-nav {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: #ff0033;
+}
+
+.carousel-controllers:has(.btn-1:hover) + .slides-container .slide-1 {
+    opacity: 1;
+    z-index: 3;
+}
+
+.carousel-controllers:has(.btn-2:hover) + .slides-container .slide-2 {
+    opacity: 1;
+    z-index: 3;
+}
+
+.carousel-controllers:has(.btn-3:hover) + .slides-container .slide-3 {
+    opacity: 1;
+    z-index: 3;
+}
+
+/* ==========================================================================
+   3. CATEGORIAS (ALINHAMENTO E REVELAÇÃO NO HOVER) 
+   ========================================================================== */
+.categories-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.categories-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.category-item span {
+    margin-top: 12px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    overflow: hidden;    
+    border: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.desc-elemento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.1); 
+}
+
+.image-wrapper:hover .desc-elemento {
+    opacity: 1; 
+}
+
+.desc-elemento h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.desc-elemento p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+}
+
+.image-wrapper:has(.bg-sangue):hover { border-color: #ff0033; }
+.bg-sangue { background-color: rgba(255, 0, 51, 0.9); color: #fff; }
+
+.image-wrapper:has(.bg-morte):hover { border-color: #00f3ff; }
+.bg-morte { background-color: rgba(0, 243, 255, 0.9); color: #000; }
+.bg-morte h4, .bg-morte p { color: #000; }
+
+.image-wrapper:has(.bg-conhecimento):hover { border-color: #ffb703; }
+.bg-conhecimento { background-color: rgba(255, 183, 3, 0.9); color: #000; }
+.bg-conhecimento h4, .bg-conhecimento p { color: #000; }
+
+.image-wrapper:has(.bg-energia):hover { border-color: #9d4edd; }
+.bg-energia { background-color: rgba(157, 78, 221, 0.9); color: #fff; }
+
+/* ==========================================================================
+   4. VITRINE DE PRODUTOS PADRONIZADA (GRID + ASPECT RATIO) 
+   ========================================================================== */
+.products-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #121214;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #27272a;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s;
+}
+
+.product-card:hover {
+    border-color: #ff003344;
+}
+
+.product-image-container {
+    width: 100%;
+    overflow: hidden; 
+    position: relative;
+    aspect-ratio: 4 / 3; 
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.4s ease; 
+}
+
+.product-card:hover .product-image-container img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-size: 1.05rem;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 1.3rem;
+    color: #ffb703; 
+    font-weight: bold;
+}
+
+.btn-buy {
+    background-color: #ff0033; 
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #cc0029;
+    box-shadow: 0 0 10px rgba(255, 0, 51, 0.3);
+}
+
+/* ==========================================================================
+   5. PRODUTO "ESGOTADO" (SOLD OUT) COM FILTROS CSS 
+   ========================================================================== */
+.product-card.sold-out .product-image-container img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.badge-sold-out {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #4c0519; 
+    color: #fca5a5;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+    letter-spacing: 1px;
+    border: 1px solid #991b1b;
+}
+
+.product-card.sold-out .btn-buy {
+    background-color: #27272a;
+    color: #71717a;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   RODAPÉ 
+   ========================================================================== */
+.main-footer {
+    text-align: center;
+    padding: 35px;
+    background-color: #070708;
+    border-top: 1px solid #121214;
+    font-size: 0.85rem;
+    color: #71717a;
+    margin-top: 80px;
+}
+
+/* ==========================================================================
+   💥 ELEMENTO FLUTUANTE AJUSTADO: ARTHUR E BALÃO LADO A LADO 
+   ========================================================================== */
+.suporte-ordem-flutuante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 500;
+    
+    display: flex;
+    flex-direction: row;     /* 🧠 DE CABEÇA: Joga o balão na esquerda e o Arthur na direita */
+    align-items: center;     /* 🧠 DE CABEÇA: Alinha o balão perfeitamente na altura do peito/ombro */
+    gap: 12px;               /* Distância simétrica entre o balão e a imagem */
+    max-width: 320px;        /* Garante que o bloco horizontal se acomode bem na tela */
+}
+
+/* O Balão de Fala Tático */
+.balao-fale-conosco {
+    background-color: #070708;       /* Fundo totalmente escuro para dar contraste e sumir com textos atrás */
+    border: 2px solid #ff0033;       /* Borda fina e precisa em Vermelho Sangue */
+    border-radius: 16px;             /* Curvatura arredondada tática moderna */
+    padding: 10px 14px;              /* Espaçamento interno ideal para o texto respirar */
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 0, 51, 0.4); /* Brilho neon sutil do Outro Lado */
+    transition: all 0.3s ease;
+    flex: 1;                         /* Permite que o balão estique e encolha proporcionalmente */
+}
+
+/* Textos dentro do Balão */
+.balao-fale-conosco span {
+    display: block;                  /* Força a quebra de linha entre as mensagens */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Segoe UI', sans-serif;
+}
+/* ==========================================================================
+   ESTILOS COMPLEMENTARES: PARTE 2 DO PROJETO (NEXUS GEEK)
+   ========================================================================= */
+
+:root {
+    --primary-color: #ff1a1a;       /* Vermelho Sangue */
+    --primary-hover: #b30000;       /* Vermelho Escuro */
+    --success-color: #00cc44;       /* Verde Suave (:valid) */
+    --error-color: #ff3333;         /* Vermelho Vivo (:invalid) */
+    --bg-dark: #121214;             /* Cor de Fundo Sombria */
+    --bg-card: #1a1a1e;             /* Fundo das Fichas e Subcontainers */
+    --border-color: #323238;        /* Bordas discretas */
+    --text-color: #e1e1e6;          /* Texto Claro */
+    --text-muted: #8d8d99;          /* Subtextos */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* --- Botão de Alistamento no Menu Superior --- */
+.nav-menu .btn-nav-register {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+.nav-menu .btn-nav-register:hover {
+    background-color: transparent;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(255, 26, 26, 0.4);
+}
+
+/* --- Detalhes do Produto (Layout de Duas Colunas via Grid) --- */
+.breadcrumb { margin-bottom: 25px; font-size: 14px; color: var(--text-muted); }
+.breadcrumb a { text-decoration: none; color: var(--primary-color); }
+
+.product-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: var(--bg-card);
+    padding: 30px;
+    border: 1px solid var(--border-color);
+}
+
+/* Ajuste da Proporção da Imagem Principal */
+.product-gallery .main-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Proporção quadrada obrigatória */
+    object-fit: cover;    /* Impede distorções */
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+}
+
+.thumbnails { display: flex; gap: 10px; margin-top: 15px; }
+.thumb {
+    width: 25%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px;
+    cursor: pointer; border: 2px solid transparent; transition: all 0.2s ease;
+}
+.thumb:hover, .thumb.active { border-color: var(--primary-color); transform: scale(1.05); }
+
+.product-info h1 { font-size: 28px; color: white; border-bottom: 1px dashed var(--border-color); padding-bottom: 10px; }
+.rating { color: #ffaa00; margin: 15px 0; font-size: 14px; }
+.old-price { text-decoration: line-through; color: var(--text-muted); font-size: 16px; }
+.current-price { font-size: 32px; font-weight: bold; color: var(--primary-color); display: block; }
+
+.product-options label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--text-muted); }
+.product-options select {
+    width: 100%; padding: 12px; border-radius: 4px; background: var(--bg-dark); color: white;
+    border: 1px solid var(--border-color); margin-bottom: 25px; font-size: 16px;
+}
+
+.btn-primary {
+    display: inline-block; width: 100%; text-align: center; background-color: var(--primary-color);
+    color: white; padding: 15px; border-radius: 4px; text-decoration: none; font-weight: bold;
+    text-transform: uppercase; transition: background 0.2s;
+}
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+/* --- Tabelas de Ficha Técnica e Inventário --- */
+.specs-section { margin-top: 40px; }
+.specs-section h2, .cart-table-container caption { font-size: 20px; margin-bottom: 15px; color: white; text-transform: uppercase; }
+
+.specs-table, .cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Requisito obrigatório */
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+}
+.specs-table th, .specs-table td, .cart-table th, .cart-table td { padding: 15px; border-bottom: 1px solid var(--border-color); text-align: left; }
+.specs-table th { background-color: rgba(255,255,255,0.03); color: var(--primary-color); width: 30%; font-weight: bold; }
+
+/* Pseudo-classe :nth-child(even) para o efeito zebrado obrigatório */
+.specs-table tbody tr:nth-child(even) { background-color: rgba(255,255,255,0.02); }
+
+/* --- Página do Carrinho de Compras --- */
+.cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+.cart-table th { background: rgba(0,0,0,0.2); color: var(--text-muted); font-size: 14px; text-transform: uppercase; }
+.cart-product-cell { display: flex; align-items: center; gap: 15px; }
+.cart-product-cell img { width: 64px; height: 64px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-color); }
+.cart-product-cell .category { display: block; font-size: 12px; color: var(--text-muted); }
+
+.cart-table input[type="number"] {
+    width: 60px; padding: 6px; background: var(--bg-dark); color: white;
+    border: 1px solid var(--border-color); border-radius: 4px; text-align: center;
+}
+.btn-remove { background: none; border: none; cursor: pointer; font-size: 16px; }
+.shipping-alert { background: rgba(0, 204, 68, 0.1); color: var(--success-color); text-align: center; font-size: 14px; }
+
+/* Resumo Lateral */
+.order-summary { background: var(--bg-card); padding: 25px; border-radius: 4px; border: 1px solid var(--border-color); }
+.order-summary h3 { margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: white; text-transform: uppercase; }
+.summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.free-shipping { color: var(--success-color); font-weight: bold; }
+.total-row { font-size: 18px; font-weight: bold; border-top: 2px dashed var(--border-color); padding-top: 15px; color: var(--primary-color); }
+
+.coupon-section { margin: 20px 0; }
+.coupon-section label { font-size: 12px; display: block; margin-bottom: 5px; color: var(--text-muted); }
+.coupon-group { display: flex; gap: 5px; }
+.coupon-group input { flex: 1; padding: 10px; background: var(--bg-dark); border: 1px solid var(--border-color); color: white; border-radius: 4px; }
+.coupon-group button { padding: 0 15px; background: var(--border-color); border: none; color: white; cursor: pointer; font-weight: bold; }
+
+.btn-checkout {
+    display: block; text-align: center; background: var(--success-color); color: white; padding: 15px;
+    border-radius: 4px; text-decoration: none; font-weight: bold; text-transform: uppercase; margin-top: 20px; transition: 0.2s;
+}
+.btn-checkout:hover { background: #009933; }
+
+/* --- Formulários Acessíveis e Fichas de Cadastro --- */
+.form-container { max-width: 800px; background: var(--bg-card); padding: 40px; border-radius: 4px; border: 1px solid var(--border-color); }
+.form-container h2 { margin-bottom: 25px; color: white; text-transform: uppercase; letter-spacing: 1px; }
+
+fieldset { border: 1px solid var(--border-color); border-radius: 4px; padding: 25px; margin-bottom: 30px; background: rgba(0,0,0,0.1); }
+legend { font-weight: bold; padding: 0 10px; color: var(--primary-color); font-size: 16px; text-transform: uppercase; }
+
+.form-group { display: flex; flex-direction: column; margin-bottom: 18px; width: 100%; }
+.form-group-large { display: flex; flex-direction: column; margin-bottom: 18px; flex: 2; }
+.form-row { display: flex; gap: 15px; }
+fieldset label { font-size: 13px; font-weight: bold; margin-bottom: 6px; color: var(--text-color); }
+
+fieldset input[type="text"],
+fieldset input[type="email"],
+fieldset input[type="tel"],
+fieldset input[type="password"],
+fieldset input[type="date"],
+fieldset select {
+    padding: 12px; background: var(--bg-dark); color: white;
+    border: 2px solid var(--border-color); border-radius: 4px; font-family: inherit; outline: none; transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   ESTADOS DE VALIDAÇÃO: PSEUDO-CLASSES OBRIGATÓRIAS (CRITÉRIO 4)
+   ========================================================================== */
+
+/* Pseudo-classe :focus - Borda brilhante ao focar */
+fieldset input:focus, fieldset select:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Pseudo-classe :focus:valid - Feedback visual verde suave se o input estiver correto */
+fieldset input:focus:valid, fieldset select:focus:valid {
+    border-color: var(--success-color);
+    box-shadow: 0 0 8px rgba(0, 204, 68, 0.3);
+}
+
+/* Pseudo-classe :focus:invalid - Feedback visual vermelho se estiver incompleto */
+fieldset input:focus:invalid, fieldset select:focus:invalid {
+    border-color: var(--error-color);
+    box-shadow: 0 0 8px rgba(255, 26, 26, 0.3);
+}
+
+/* Customização dos botões de rádio para pagamento */
+.payment-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 10px; }
+.payment-card { position: relative; cursor: pointer; }
+.payment-card input[type="radio"] { position: absolute; opacity: 0; } /* Oculta a bolinha padrão */
+
+.payment-box {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 20px; border: 2px solid var(--border-color); background: var(--bg-dark); border-radius: 4px; transition: all 0.2s;
+}
+.payment-box .icon { font-size: 24px; margin-bottom: 8px; }
+.payment-box strong { font-size: 14px; display: block; color: white; }
+.payment-box small { color: var(--text-muted); font-size: 11px; margin-top: 4px; }
+
+/* Pseudo-classe :checked - Modifica o card do rádio selecionado */
+.payment-card input[type="radio"]:checked + .payment-box {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 26, 26, 0.05);
+}
+
+.terms-group { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; font-size: 13px; }
+.terms-group input { width: 18px; height: 18px; accent-color: var(--primary-color); }
+
+.btn-submit {
+    display: block; width: 100%; text-align: center; background-color: var(--primary-color);
+    color: white; padding: 15px; border-radius: 4px; text-decoration: none; font-weight: bold;
+    text-transform: uppercase; transition: background 0.2s;
+}
+/* --- Seção de Lore e Temporadas (Dossiê) --- */
+.series-lore-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 4px;
+}
+
+.lore-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.lore-text h2 {
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.lore-text p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.seasons-timeline h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.seasons-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.seasons-list li {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.seasons-list li:last-child {
+    border-bottom: none;
+}
+
+/* Badges estilizadas para representar os elementos */
+.season-badge {
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    white-space: nowrap;
+    min-width: 130px;
+    text-align: center;
+}
+
+.badge-classic { background-color: #475569; color: white; }
+.badge-sangue { background-color: #990000; color: white; border: 1px solid #ff1a1a; }
+.badge-morte { background-color: #1c1917; color: #a8a29e; border: 1px solid #444; }
+.badge-conhecimento { background-color: #78350f; color: #fef08a; border: 1px solid #eab308; }
+.badge-energia { background-color: #581c87; color: #f5d0fe; border: 1px solid #a855f7; }
+
+.season-desc {
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.season-desc strong {
+    color: white;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .lore-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .seasons-list li {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+
