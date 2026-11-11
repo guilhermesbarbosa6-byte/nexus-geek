@@ -34,8 +34,8 @@ Todas as páginas deste repositório foram inspecionadas e validadas com **Zero 
 
 | Página / Arquivo | Status W3C | Link de Auditoria ao Vivo (W3C URI) |
 | :--- | :---: | :--- |
-| **`index.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://w3.org) |
-| **`produto.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://w3.org) |
-| **`carrinho.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://w3.org) |
-| **`cadastro.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://w3.org) |
-| **`style.css`** | 🟢 CSS3 Válido | [Verificar no W3C Jigsaw CSS](https://w3.org) |
+| **`index.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguilhermesbarbosa6.github.io%2Fnexus-geek%2Findex.html) |
+| **`produto.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguilhermesbarbosa6.github.io%2Fnexus-geek%2Fproduto.html) |
+| **`carrinho.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguilhermesbarbosa6.github.io%2Fnexus-geek%2Fcarrinho.html) |
+| **`cadastro.html`** | 🟢 100% Válido | [Verificar no W3C Nu Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguilhermesbarbosa6.github.io%2Fnexus-geek%2Fcadastro.html) |
+| **`style.css`** | 🟢 CSS3 Válido | [Verificar no W3C Jigsaw CSS](https://validator.w3.org/nu/?doc=https%3A%2F%2Fguilhermesbarbosa6.github.io%2Fnexus-geek%2Findex.html&profile=css3svg) |
