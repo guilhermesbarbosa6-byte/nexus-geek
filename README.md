@@ -5,8 +5,8 @@ Projeto prático desenvolvido na Unidade Curricular de **Linguagem de Marcação
 ## 🌐 Links das Páginas Publicadas (GitHub Pages)
 - 🏠 [Vitrine Principal (index.html)](https://guilhermesbarbosa6-byte.github.io/nexus-geek/)
 - 🔍 [Detalhes do Produto (produto.html)](http://127.0.0.1:5500/produto.html)
-- 🛍️ [Carrinho de Compras (carrinho.html)](https://github.io)
-- 👤 [Cadastro e Checkout (cadastro.html)](https://github.io)
+- 🛍️ [Carrinho de Compras (carrinho.html)](http://127.0.0.1:5500/carrinho.html)
+- 👤 [Cadastro e Checkout (cadastro.html)]([https://github.io](http://127.0.0.1:5500/cadastro.html))
 
 ---
 
